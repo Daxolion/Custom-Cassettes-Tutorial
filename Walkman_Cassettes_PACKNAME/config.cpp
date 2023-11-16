@@ -29,11 +29,11 @@ class CfgMods
 		action = "URL OPEN BY CLICK";
 		hideName = 0;
 		hidePicture = 0;
-		picture = "Walkman_Cassettes/gui/imagesets/logo.paa";
-		logoSmall = "Walkman_Cassettes/gui/imagesets/logo.paa";
-		logo = "Walkman_Cassettes/gui/imagesets/logo.paa";
-		logoOver = "Walkman_Cassettes/gui/imagesets/logo.paa";
-		tooltip = "The Walkman Mod Additional Cassettes";
+		picture = "Walkman/gui/logo.paa";
+		logoSmall = "Walkman/gui/logo.paa";
+		logo = "Walkman/gui/logo.paa";
+		logoOver = "Walkman/gui/logo.paa";
+		tooltip = "The Walkman Mod - Additional Cassettes by YOURNAME";
 		
 		//edit
 		overview = "PACKNAME";
@@ -47,21 +47,21 @@ class CfgMods
 			class gameScriptModule
 			{
 				value = "";
-				files[] = {"Walkman_Cassettes/scripts/common","Walkman/scripts/3_Game"};
+				files[] = {"Walkman/scripts/common","Walkman/scripts/3_Game"};
 			};
 			class worldScriptModule
 			{
 				value = "";
-				files[] = {"Walkman_Cassettes/scripts/common","Walkman/scripts/4_World"};
+				files[] = {"Walkman/scripts/common","Walkman/scripts/4_World"};
 			};
 			class missionScriptModule
 			{
 				value = "";
-				files[] = {"Walkman_Cassettes/scripts/common","Walkman/scripts/5_Mission"};
+				files[] = {"Walkman/scripts/common","Walkman/scripts/5_Mission"};
 			};
 			class imageSets
 			{
-				files[] = {"Walkman_Cassettes/gui/imagesets/cassette.imageset"};
+				files[] = {"Walkman/gui/imagesets/cassette.imageset"};
 			};
 			
 		};
@@ -71,11 +71,30 @@ class CfgMods
 //dont edit
 class CfgSoundShaders
 {
-	class Cassette_SoundShader_Base
+	//dontedit
+	class Cassette_Base_Shader;
+	
+	//edit
+	class Custom_Cassette_SoundShader_Base: Cassette_Base_Shader
 	{
+		//dontedit )"","",""
 		samples[] = {};
 		frequency = 1;
+		
+		//edit
 		range = 80;
 		volume = 1;
+	};
+};
+
+class CfgSoundSets
+{
+	//dontedit
+	class Cassette_Base_SoundSet;
+	
+	//edit
+	class Custom_Cassette_Base_SoundSet: Cassette_Base_SoundSet
+	{
+		soundShaders[] = {"Custom_Cassette_SoundShader_Base"};
 	};
 };
